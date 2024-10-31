@@ -18,10 +18,9 @@ if [ -z != ${10} ]; then
 	apk add sshpass
 
 	# Create an SFTP batch file with mkdir command if directory creation is required
-	if [ "$7" != "true" ]; then
-		echo 'Create directory if needed'
-		printf "%s\n" "mkdir $6" >$TEMP_SFTP_FILE
-	fi
+	echo 'Create directory if needed'
+	printf "%s\n" "mkdir $6" >$TEMP_SFTP_FILE
+	
 	
 	# Add the put command to transfer files
 	echo 'SFTP Start'
@@ -39,10 +38,9 @@ printf "%s" "$4" >$TEMP_SSH_PRIVATE_KEY_FILE
 chmod 600 $TEMP_SSH_PRIVATE_KEY_FILE
 
 # Create an SFTP batch file with mkdir command if directory creation is required
-if [ "$7" != "true" ]; then
-  echo 'Create directory if needed'
-  printf "%s\n" "mkdir $6" >$TEMP_SFTP_FILE
-fi
+echo 'Create directory if needed'
+printf "%s\n" "mkdir $6" >$TEMP_SFTP_FILE
+
 
 # Add the put command to transfer files
 echo 'SFTP Start'
