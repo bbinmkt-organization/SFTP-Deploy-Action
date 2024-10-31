@@ -39,7 +39,7 @@ chmod 600 $TEMP_SSH_PRIVATE_KEY_FILE
 
 # Create an SFTP batch file with mkdir command if directory creation is required
 echo 'Create directory if needed'
-printf "%s\n" "mkdir $6" >$TEMP_SFTP_FILE
+printf "%s\n" "mkdir -p $6" >$TEMP_SFTP_FILE
 
 
 # Add the put command to transfer files
