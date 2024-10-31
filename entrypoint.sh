@@ -41,8 +41,6 @@ chmod 600 $TEMP_SSH_PRIVATE_KEY_FILE
 echo 'Create directory if needed'
 printf "%s\n" "-mkdir $6" >$TEMP_SFTP_FILE
 
-printf "%s\n" "rm -rf $6/*" >$TEMP_SFTP_FILE
-
 # Add the put command to transfer files
 echo 'SFTP Start'
 printf "%s\n" "put -r $5 $6" >>$TEMP_SFTP_FILE
